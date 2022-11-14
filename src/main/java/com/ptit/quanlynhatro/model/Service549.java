@@ -4,17 +4,17 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "service")
+@Table(name = "tblservice")
 public class Service549 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private int ID;
+    @Column(name = "id", nullable = false,unique = true)
+    private int id;
 
-    @Column(name = "name")
+    @Column(name = "name", nullable = false, unique = true)
     private String name;
 
-    @Column(name = "pricePerUnit")
+    @Column(name = "pricePerUnit", nullable = false)
     private double pricePerUnit;
 
     @Column(name = "note")
@@ -27,11 +27,11 @@ public class Service549 {
     }
 
     public int getID() {
-        return ID;
+        return id;
     }
 
     public void setID(int ID) {
-        this.ID = ID;
+        this.id = ID;
     }
 
     public String getName() {

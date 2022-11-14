@@ -4,17 +4,17 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "owner")
+@Table(name = "tblowner")
 public class Owner549 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private int ID;
+    @Column(name = "id", nullable = false, unique = true)
+    private int id;
 
-    @Column(name = "fullName")
+    @Column(name = "fullName", nullable = false)
     private String fullName;
 
-    @Column(name = "tel")
+    @Column(name = "tel", nullable = false)
     private String tel;
 
     @OneToMany(mappedBy = "owner549", cascade = CascadeType.ALL)
@@ -26,11 +26,11 @@ public class Owner549 {
     }
 
     public int getID() {
-        return ID;
+        return id;
     }
 
     public void setID(int ID) {
-        this.ID = ID;
+        this.id = ID;
     }
 
     public String getFullName() {

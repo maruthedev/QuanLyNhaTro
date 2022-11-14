@@ -4,23 +4,23 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "user")
+@Table(name = "tbluser")
 public class User549 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private int ID;
+    @Column(name = "id", nullable = false, unique = true)
+    private int id;
 
-    @Column(name = "username")
+    @Column(name = "username", nullable = false, unique = true)
     private String username;
 
-    @Column(name = "password")
+    @Column(name = "password", nullable = false)
     private String password;
 
-    @Column(name = "fullName")
+    @Column(name = "fullName", nullable = false)
     private String fullName;
 
-    @Column(name = "position")
+    @Column(name = "position", nullable = false)
     private String position;
 
     @OneToMany(mappedBy = "user549", cascade = CascadeType.ALL)
@@ -30,11 +30,11 @@ public class User549 {
     }
 
     public int getID() {
-        return ID;
+        return id;
     }
 
     public void setID(int ID) {
-        this.ID = ID;
+        this.id = ID;
     }
 
     public String getUsername() {

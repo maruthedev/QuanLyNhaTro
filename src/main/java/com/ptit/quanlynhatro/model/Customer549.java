@@ -6,26 +6,26 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "customer")
+@Table(name = "tblcustomer")
 public class Customer549 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private int ID;
+    @Column(name = "id", nullable = false, unique = true)
+    private int id;
 
-    @Column(name = "fullName")
+    @Column(name = "fullName", nullable = false)
     private String fullName;
 
-    @Column(name = "dob")
+    @Column(name = "dob", nullable = false)
     private LocalDate dob;
 
-    @Column(name = "idCard")
+    @Column(name = "idCard", nullable = false,unique = true)
     private String IDCard;
 
-    @Column(name = "tel")
+    @Column(name = "tel", nullable = false)
     private String tel;
 
-    @Column(name = "hometown")
+    @Column(name = "hometown", nullable = false)
     private String hometown;
 
     @OneToMany(mappedBy = "customer549", cascade = CascadeType.ALL)
@@ -35,11 +35,11 @@ public class Customer549 {
     }
 
     public int getID() {
-        return ID;
+        return id;
     }
 
     public void setID(int ID) {
-        this.ID = ID;
+        this.id = ID;
     }
 
     public String getFullName() {

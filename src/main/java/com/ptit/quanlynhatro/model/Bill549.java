@@ -5,20 +5,20 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Entity
-@Table(name = "bill")
+@Table(name = "tblbill")
 public class Bill549 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private int ID;
+    @Column(name = "id", nullable = false,  unique = true)
+    private int id;
 
-    @Column(name = "paymentDate")
+    @Column(name = "paymentDate", nullable = false)
     private LocalDate paymentDate;
 
-    @Column(name = "amount")
+    @Column(name = "amount", nullable = false)
     private double amount;
 
-    @Column(name = "payerName")
+    @Column(name = "payerName", nullable = false)
     private String payerName;
 
     @ManyToOne
@@ -31,11 +31,11 @@ public class Bill549 {
     }
 
     public int getID() {
-        return ID;
+        return id;
     }
 
     public void setID(int ID) {
-        this.ID = ID;
+        this.id = ID;
     }
 
     public LocalDate getPaymentDate() {

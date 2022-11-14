@@ -4,26 +4,26 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "room")
+@Table(name = "tblroom")
 public class Room549 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private int ID;
+    @Column(name = "id", nullable = false, unique = true)
+    private int id;
 
-    @Column(name = "name")
+    @Column(name = "name", nullable = false, unique = true)
     private String name;
 
-    @Column(name = "floor")
+    @Column(name = "floor", nullable = false)
     private int floor;
 
-    @Column(name = "type")
+    @Column(name = "type", nullable = false)
     private String type;
 
-    @Column(name = "price")
+    @Column(name = "price", nullable = false)
     private double price;
 
-    @Column(name = "status")
+    @Column(name = "status", nullable = false)
     private String status;
 
     @ManyToOne
@@ -36,11 +36,11 @@ public class Room549 {
     }
 
     public int getID() {
-        return ID;
+        return id;
     }
 
     public void setID(int ID) {
-        this.ID = ID;
+        this.id = ID;
     }
 
     public String getName() {

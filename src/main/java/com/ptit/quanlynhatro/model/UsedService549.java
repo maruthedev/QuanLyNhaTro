@@ -6,20 +6,20 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "usedService")
+@Table(name = "tblusedService")
 public class UsedService549 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private int ID;
+    @Column(name = "id", nullable = false, unique = true)
+    private int id;
 
-    @Column(name = "price")
+    @Column(name = "price", nullable = false)
     private double price;
 
-    @Column(name = "quantity")
+    @Column(name = "quantity", nullable = false)
     private int quantity;
 
-    @Column(name = "totalAmount")
+    @Column(name = "totalAmount", nullable = false)
     private double totalAmount;
 
     @Column(name = "usedTime")
@@ -35,11 +35,11 @@ public class UsedService549 {
     }
 
     public int getID() {
-        return ID;
+        return id;
     }
 
     public void setID(int ID) {
-        this.ID = ID;
+        this.id = ID;
     }
 
     public double getPrice() {

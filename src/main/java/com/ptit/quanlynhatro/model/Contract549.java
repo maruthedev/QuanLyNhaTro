@@ -8,26 +8,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name ="contract")
+@Table(name ="tblcontract")
 public class Contract549 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private int ID;
+    @Column(name = "id", nullable = false, unique = true)
+    private int id;
 
-    @Column(name = "partyA")
+    @Column(name = "partyA", nullable = false)
     private String partyA;
 
-    @Column(name = "partyB")
+    @Column(name = "partyB", nullable = false)
     private String partyB;
 
-    @Column(name = "price")
+    @Column(name = "price", nullable = false)
     private double price;
 
-    @Column(name = "deposit")
+    @Column(name = "deposit", nullable = false)
     private double deposit;
 
-    @Column(name = "arrivalDate")
+    @Column(name = "arrivalDate", nullable = false)
     private LocalDate arrivalDate;
 
     @ManyToOne
@@ -48,11 +48,11 @@ public class Contract549 {
     }
 
     public int getID() {
-        return ID;
+        return id;
     }
 
     public void setID(int ID) {
-        this.ID = ID;
+        this.id = ID;
     }
 
     public String getPartyA() {

@@ -8,17 +8,17 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "booking")
+@Table(name = "tblbooking")
 public class Booking549 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private int ID;
+    @Column(name = "id", nullable = false, unique = true)
+    private int id;
 
-    @Column(name = "bookDay")
+    @Column(name = "bookDay", nullable = false)
     private LocalDateTime bookDay;
 
-    @Column(name = "deposit")
+    @Column(name = "deposit", nullable = false)
     private double deposit;
 
     @Column(name = "note")
@@ -37,11 +37,11 @@ public class Booking549 {
     }
 
     public int getID() {
-        return ID;
+        return id;
     }
 
     public void setID(int ID) {
-        this.ID = ID;
+        this.id = ID;
     }
 
     public LocalDateTime getBookDay() {
